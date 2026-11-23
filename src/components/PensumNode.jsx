@@ -94,7 +94,7 @@ export default function PensumNode({
       title={`${displayCodigo} — ${displayNombre}${
         materia.esCicloExtraordinario ? ' (Asignatura de ciclo extraordinario)' : ''
       }`}
-      className={`group relative flex w-full cursor-pointer flex-col justify-between overflow-hidden rounded-xl border text-left transition-all duration-150 focus:ring-2 focus:ring-red-700/40 focus:outline-none ${cardStyle} ${highlightClasses}`}
+      className={`group relative flex min-h-[112px] w-full cursor-pointer flex-col justify-between overflow-hidden rounded-xl border text-left transition-all duration-150 focus:ring-2 focus:ring-red-700/40 focus:outline-none ${cardStyle} ${highlightClasses}`}
     >
       {/* Top Row: NC (left) & UV (right) */}
       <div

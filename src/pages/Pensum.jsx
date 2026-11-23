@@ -544,11 +544,11 @@ export default function Pensum({ onNavigateToDashboard }) {
 
       {/* Interactive 10-Column Curriculum Grid grouped in 5 Years */}
       <section aria-label="Malla curricular de 56 asignaturas" className="overflow-x-auto pb-4">
-        <div className="inline-flex min-w-full gap-4">
+        <div className="flex w-max gap-4 px-1 py-1">
           {visibleYears.map((yearBlock) => (
             <div
               key={yearBlock.anio}
-              className="flex flex-col rounded-2xl border border-slate-200 bg-slate-100/70 p-3"
+              className="flex shrink-0 flex-col rounded-2xl border border-slate-200 bg-slate-100/70 p-3"
             >
               {/* Year Header */}
               <div className="mb-3 flex items-center justify-between rounded-xl bg-slate-900 px-3 py-1.5 text-white">
@@ -562,11 +562,14 @@ export default function Pensum({ onNavigateToDashboard }) {
               </div>
 
               {/* Two Cycle Columns per Year */}
-              <div className="grid grid-cols-2 gap-3">
+              <div className="flex gap-3">
                 {yearBlock.ciclos.map((cicloCol) => {
                   const uvCiclo = cicloCol.materias.reduce((acc, m) => acc + m.uv, 0);
                   return (
-                    <div key={cicloCol.ciclo} className="flex w-[186px] flex-col gap-2.5 sm:w-[196px]">
+                    <div
+                      key={cicloCol.ciclo}
+                      className="flex w-[192px] shrink-0 flex-col gap-2.5 sm:w-[204px]"
+                    >
                       <div className="flex items-center justify-between rounded-lg border border-slate-200 bg-white px-2.5 py-1.5">
                         <span className="inline-flex items-center gap-1 text-xs font-bold text-slate-800">
                           <BookOpen className="h-3.5 w-3.5 text-red-800" />
