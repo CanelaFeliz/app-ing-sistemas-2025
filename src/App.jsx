@@ -17,7 +17,11 @@ export default function App() {
     <div className="min-h-screen bg-slate-50 text-slate-900">
       <Navbar activeTab={activeTab} onChangeTab={setActiveTab} />
       <main className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-        {activeTab === 'dashboard' ? <Dashboard /> : <Pensum />}
+        {activeTab === 'dashboard' ? (
+          <Dashboard />
+        ) : (
+          <Pensum onNavigateToDashboard={() => setActiveTab('dashboard')} />
+        )}
       </main>
     </div>
   );
